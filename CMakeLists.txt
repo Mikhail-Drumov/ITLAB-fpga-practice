@@ -21,4 +21,4 @@ set(HAVE_POSIX_REGEX 0)
 
 enable_testing()
 
-add_subdirectory(${TESTS})
+add_subdirectory(tb)
