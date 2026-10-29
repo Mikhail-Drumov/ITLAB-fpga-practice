@@ -29,7 +29,9 @@ jobs:
       run: cmake --build build -j4
 
     - name: Run GTest Simulation
-      run: cd build && ctest --output-on-failure
+      run: |
+        cd build
+        ctest --output-on-failure
 
     - name: Upload Waveforms
       # always() гарантирует загрузку артефакта, даже если тесты или сборка упали
@@ -37,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: simulation-waves
-        path: "*.vcd"
+        path: "**/*.vcd"
