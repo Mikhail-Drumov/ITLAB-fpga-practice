@@ -29,7 +29,7 @@ jobs:
       run: cmake --build build -j4
 
     - name: Run GTest Simulation
-      run: ./build/testbench
+      run: cd build && ctest --output-on-failure
 
     - name: Upload Waveforms
       # always() гарантирует загрузку артефакта, даже если тесты или сборка упали

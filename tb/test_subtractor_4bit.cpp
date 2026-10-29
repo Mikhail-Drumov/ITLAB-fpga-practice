@@ -6,7 +6,7 @@
 
 class SubtractorTest : public ::testing::Test {
 protected:
-    std::unique_ptr<Vadder_4bit> dut;
+    std::unique_ptr<Vsubtractor_4bit> dut;
     std::unique_ptr<VerilatedVcdC> trace;
     vluint64_t sim_time;
 
@@ -43,7 +43,6 @@ TEST_F(SubtractorTest, Subtracting) {
 		for (B = 0; B < 16; B++) {
 			dut->A = A;
 			dut->B = B;
-			dut->cin = 0;
 			
 			tick();
 			
